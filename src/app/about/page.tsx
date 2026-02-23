@@ -2,7 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Award, Users, Heart, ArrowRight, Camera } from "lucide-react";
+import Image from "next/image";
+import { Award, Users, Heart, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Über Uns | Kabashi-Stöckler Fussballschule",
@@ -25,53 +26,97 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Photo */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-2xl overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/trainer-team.jpg"
+              alt="Albert Kabashi und Jonas Stöckler - Trainer der KS Fussballschule"
+              width={800}
+              height={1000}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Coaches Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-3xl font-black text-[#003399]">UNSERE TRAINER</h2>
 
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            {/* Coach 1 */}
+          <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
+            {/* Coach 1 - Jonas Stöckler */}
             <Card className="overflow-hidden border-0 shadow-lg">
-              <div className="relative h-64 bg-gradient-to-br from-[#003399]/20 to-[#22C55E]/20">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Camera className="mx-auto h-12 w-12 text-gray-400" />
-                    <p className="mt-2 text-sm text-gray-500">Foto Platzhalter</p>
-                  </div>
-                </div>
+              <div className="relative h-80 overflow-hidden">
+                <Image
+                  src="/images/jonas-stoeckler.jpg"
+                  alt="Jonas Stöckler - Co-Founder & Trainer"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
               <CardContent className="p-6">
-                <h3 className="mb-1 text-2xl font-black text-[#003399]">KABASHI</h3>
+                <h3 className="mb-1 text-2xl font-black text-[#003399]">Jonas Stöckler</h3>
                 <p className="mb-4 font-semibold text-[#22C55E]">Co-Founder & Trainer</p>
-                <p className="text-gray-600">
-                  Mit jahrelanger Erfahrung im Fußball bringt Kabashi technisches Know-how 
-                  und echte Leidenschaft für die Entwicklung junger Spieler mit. 
-                  Sein Fokus liegt auf der individuellen Förderung und dem Aufbau 
-                  von Selbstvertrauen bei jedem Kind.
-                </p>
+                <div className="space-y-3 text-gray-600">
+                  <p>
+                    Jonas Stöckler begann seine fußballerische Laufbahn bereits im Alter von sechs Jahren
+                    bei Grün-Weiß Micheldorf. Dort durchlief er alle Nachwuchsstationen und schaffte
+                    schließlich den Sprung in die Kampfmannschaft der OÖ-Liga. In dieser Zeit absolvierte
+                    er zahlreiche Einsätze und erzielte zwei Tore. Neben seiner Zeit in Micheldorf sammelte
+                    er auch wertvolle Erfahrungen in Wien, wo er sechs Monate lang beim Regionalligisten
+                    Wiener Viktoria unter der Leitung von Toni Polster mittrainierte.
+                  </p>
+                  <p>
+                    Nach dieser intensiven Phase folgte der Wechsel in die Landesliga Wien zur Sportunion
+                    Schönbrunn. Zwei Jahre später kehrte er zurück nach Oberösterreich zur Union Pettenbach,
+                    ebenfalls ein Verein der Landesliga. Aufgrund wiederkehrender und hartnäckiger Verletzungen
+                    ließ die Motivation und der Antrieb für den leistungsorientierten Fußball jedoch
+                    zunehmend nach.
+                  </p>
+                  <p>
+                    Parallel zu seiner sportlichen Laufbahn ist Jonas heute als Lehrperson an der
+                    Mittelschule in Kirchdorf tätig.
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Coach 2 */}
+            {/* Coach 2 - Albert Kabashi */}
             <Card className="overflow-hidden border-0 shadow-lg">
-              <div className="relative h-64 bg-gradient-to-br from-[#003399]/20 to-[#22C55E]/20">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Camera className="mx-auto h-12 w-12 text-gray-400" />
-                    <p className="mt-2 text-sm text-gray-500">Foto Platzhalter</p>
-                  </div>
-                </div>
+              <div className="relative h-80 overflow-hidden">
+                <Image
+                  src="/images/albert-kabashi.jpg"
+                  alt="Albert Kabashi - Co-Founder & Trainer"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
               <CardContent className="p-6">
-                <h3 className="mb-1 text-2xl font-black text-[#003399]">STÖCKLER</h3>
-                <p className="mb-4 font-semibold text-[#22C55E]">Co-Founder & Trainer</p>
-                <p className="text-gray-600">
-                  Stöckler kombiniert moderne Trainingsmethoden mit traditionellem 
-                  Fußball-Know-how. Seine Stärke liegt in der Koordinations- und 
-                  Athletikschulung sowie der Vermittlung von Spielintelligenz 
-                  auf spielerische Art und Weise.
-                </p>
+                <h3 className="mb-1 text-2xl font-black text-[#003399]">Albert Kabashi</h3>
+                <p className="mb-4 font-semibold text-[#22C55E]">Co-Founder & Cheftrainer | UEFA A-Lizenz</p>
+                <div className="space-y-3 text-gray-600">
+                  <p>
+                    Mit einer beeindruckenden Karriere als Nachwuchsspieler bei Dinamo Zagreb (Junioren),
+                    Trešnjevka Zagreb, sowie bei verschiedenen Vereinen in Österreich wie Steyr, Micheldorf,
+                    Lenzing, Gmunden und Vöcklabruck bringt Albert Kabashi jahrzehntelange Fußballerfahrung
+                    mit auf den Platz.
+                  </p>
+                  <p>
+                    Auch als Trainer gehört er zu den Erfolgreichsten in Oberösterreich: Mit Stationen u.a.
+                    beim SV Gmunden, Vöcklabruck, Micheldorf, Stadl-Paura und Molln konnte er gleich
+                    4 Meistertitel feiern, wurde 3x Herbstmeister in der OÖ Liga mit Gmunden, 1x mit
+                    Stadlpaura und von der Krone zum Trainer des Jahres gewählt. Mit der UEFA A-Lizenz
+                    ausgestattet, bringt er höchste fachliche Kompetenz mit.
+                  </p>
+                  <p>
+                    Neben dem Fußball ist er seit über 20 Jahren als Sozialpädagoge beim Land OÖ tätig –
+                    eine Kombination aus Herz, Erfahrung und Know-how, die ihn zu einem spitzen Coach machen.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -84,18 +129,18 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-8 text-3xl font-black text-[#003399]">UNSERE GESCHICHTE</h2>
             <p className="mb-6 text-lg text-gray-700">
-              Die Kabashi-Stöckler Fussballschule wurde aus der gemeinsamen Leidenschaft 
-              für den Fußball und dem Wunsch gegründet, jungen Talenten in Oberösterreich 
+              Die Kabashi-Stöckler Fussballschule wurde aus der gemeinsamen Leidenschaft
+              für den Fußball und dem Wunsch gegründet, jungen Talenten in Oberösterreich
               professionelles Training zu bieten.
             </p>
             <p className="mb-6 text-lg text-gray-700">
-              Was als kleine Initiative begann, hat sich zu einem anerkannten Trainingszentrum 
-              entwickelt, das Kinder und Jugendliche von 6 bis 16 Jahren auf ihrem fußballerischen 
+              Was als kleine Initiative begann, hat sich zu einem anerkannten Trainingszentrum
+              entwickelt, das Kinder und Jugendliche von 6 bis 16 Jahren auf ihrem fußballerischen
               Weg begleitet und fördert.
             </p>
             <p className="text-lg text-gray-700">
-              Unser Ziel ist es, nicht nur bessere Fußballer zu entwickeln, sondern auch 
-              Werte wie Teamgeist, Fairplay und Durchhaltevermögen zu vermitteln - 
+              Unser Ziel ist es, nicht nur bessere Fußballer zu entwickeln, sondern auch
+              Werte wie Teamgeist, Fairplay und Durchhaltevermögen zu vermitteln -
               Eigenschaften, die weit über den Fußballplatz hinaus wichtig sind.
             </p>
           </div>
@@ -132,30 +177,6 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Gallery Placeholder */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-black text-[#003399]">GALERIE</h2>
-
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div
-                key={i}
-                className="relative aspect-square overflow-hidden rounded-lg bg-gradient-to-br from-[#003399]/10 to-[#22C55E]/10"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Camera className="h-8 w-8 text-gray-400" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 text-center text-gray-500">
-            Fotos von unseren Camps und Trainings werden hier bald hinzugefügt!
-          </p>
         </div>
       </section>
 
